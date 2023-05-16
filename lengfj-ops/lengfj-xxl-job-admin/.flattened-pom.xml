@@ -16,6 +16,10 @@
       <artifactId>lengfj-common-core</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.lengfj.cloud</groupId>
+      <artifactId>lengfj-common-springdoc</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
     </dependency>

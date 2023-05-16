@@ -16,7 +16,6 @@
         <dependency>
             <groupId>com.lengfj.cloud</groupId>
             <artifactId>lengfj-common-core</artifactId>
-            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -24,7 +23,6 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>

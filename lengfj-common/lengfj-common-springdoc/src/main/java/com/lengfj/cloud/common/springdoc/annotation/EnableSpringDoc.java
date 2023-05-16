@@ -1,6 +1,5 @@
 package com.lengfj.cloud.common.springdoc.annotation;
 
-import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.lengfj.cloud.common.springdoc.SpringDocAutoConfiguration;
 import org.springframework.context.annotation.Import;
 

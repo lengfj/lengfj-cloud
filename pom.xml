@@ -8,7 +8,7 @@
     <artifactId>lengfj-cloud</artifactId>
     <version>${revision}</version>
     <modules>
-        <module>lengfj-bom</module>
+<!--        <module>lengfj-bom</module>-->
         <module>lengfj-common</module>
         <module>lengfj-ops</module>
         <module>lengfj-system</module>
@@ -37,7 +37,7 @@
             <dependency>
                 <groupId>com.lengfj.cloud</groupId>
                 <artifactId>lengfj-bom</artifactId>
-                <version>${revision}</version>
+                <version>1.0-snapshot</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -118,12 +118,12 @@
 
 
     <!-- 使用 aliyun 的 Maven 源，提升下载速度 -->
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>aliyunmaven</id>-->
-<!--            <name>aliyun</name>-->
-<!--            <url>https://maven.aliyun.com/repository/public</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
+    <repositories>
+        <repository>
+            <id>aliyunmaven</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 
 </project>

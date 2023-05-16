@@ -9,7 +9,6 @@
   <name>${project.artifactId}</name>
   <description>SpringCloud脚手架</description>
   <modules>
-    <module>lengfj-bom</module>
     <module>lengfj-common</module>
     <module>lengfj-ops</module>
     <module>lengfj-system</module>

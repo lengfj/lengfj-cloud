@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.lengfj.cloud</groupId>
         <artifactId>lengfj-cloud</artifactId>
-        <version>1.0-snapshot</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>lengfj-system</artifactId>
@@ -28,6 +28,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
@@ -43,10 +48,7 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>
