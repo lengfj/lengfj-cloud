@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--    <parent>-->
+<!--        <artifactId>lengfj-bom</artifactId>-->
+<!--        <groupId>com.lengfj.cloud</groupId>-->
+<!--        <version>${revision}</version>-->
+<!--    </parent>-->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.lengfj.cloud</groupId>
+    <artifactId>lengfj-common-all</artifactId>
+    <version>1.0-snapshot</version>
+    <packaging>jar</packaging>
+    <name>lengfj-cloud common All-in-one ${project.version}</name>
+    <description>包含所有 lengfj-cloud common 组件</description>
+
+    <properties>
+        <!-- Compiler settings properties -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+     <dependencies>
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-core</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-feign</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-id</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-job</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-mybatis</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-redis-lock</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-springdoc</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-user</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.lengfj.cloud</groupId>
+             <artifactId>lengfj-common-test</artifactId>
+             <version>${project.version}</version>
+         </dependency>
+    </dependencies>
+
+</project>

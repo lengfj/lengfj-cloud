@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.lengfj.cloud.common.core.handle.GlobalExceptionHandle,\
+    com.lengfj.cloud.common.core.util.SpringContextUtil,\
+    com.lengfj.cloud.common.core.log.aop.LogAspect,\
+    com.lengfj.cloud.common.core.log.aop.OldLogAspect

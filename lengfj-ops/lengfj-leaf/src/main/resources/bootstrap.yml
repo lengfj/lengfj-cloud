@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /${spring.application.name}
+  port: 5005
+
+spring:
+  application:
+    name: lengfj-leaf
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+#        namespace: ${NACOS_NAMESPACE}
+#      config:
+#        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#        file-extension: yml
+#        namespace: ${NACOS_NAMESPACE}
+#        group: ${spring.application.name}
+  # banner
+  banner:
+    location: classpath:banner.txt
+#  profiles:
+#    active: @spring.profiles.active@

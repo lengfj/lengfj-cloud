@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.lengfj.cloud</groupId>
+    <artifactId>lengfj-common</artifactId>
+    <version>1.0-snapshot</version>
+  </parent>
+  <groupId>com.lengfj.cloud</groupId>
+  <artifactId>lengfj-common-mybatis</artifactId>
+  <version>1.0-snapshot</version>
+  <properties>
+    <mybatis.typehandlers.jsr310.version>1.0.2</mybatis.typehandlers.jsr310.version>
+    <jackson.datatype.jsr310.version>2.9.9</jackson.datatype.jsr310.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.lengfj.cloud</groupId>
+      <artifactId>lengfj-common-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-typehandlers-jsr310</artifactId>
+      <version>${mybatis.typehandlers.jsr310.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${jackson.datatype.jsr310.version}</version>
+    </dependency>
+  </dependencies>
+</project>

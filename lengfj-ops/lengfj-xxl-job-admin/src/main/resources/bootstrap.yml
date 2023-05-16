@@ -1,0 +1,22 @@
+server:
+  port: 5004
+  servlet:
+    context-path: /xxl-job-admin
+
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+#        namespace: ${NACOS_NAMESPACE}
+#      config:
+#        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#        file-extension: yml
+#        shared-configs:
+#          - ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#        namespace: ${NACOS_NAMESPACE}
+#        group: ${spring.application.name}
+#  profiles:
+#    active: @profiles.active@

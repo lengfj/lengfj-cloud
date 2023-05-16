@@ -1,0 +1,82 @@
+spring:
+
+  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lengfj_cloud?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=100
+    username: root
+    password: mysql123..
+#    druid:
+#      # jdbc链接地址
+#      url: jdbc:mysql://localhost:3306/lengfj_cloud?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+#      # 用户名
+#      username: ${db.username:root}
+#      # 用户密码
+#      password: ${db.password:mysql123..}
+#      # 启动程序时初始化多少个链接 建议值：10-50
+#      initial-size: ${db.initial-size:10}
+#      # 连接池中最多支持多少个活动会话
+#      max-active: ${db.max-active:100}
+#      # 最小空闲链接闲置
+#      min-idle: ${db.min-idel:10}
+#      # 程序向连接池中请求连接时,超过maxWait的值后，认为本次请求失败，即连接池 建议值:100
+#      max-wait: ${db.max-wait:60000}
+#      # #是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+#      pool-prepared-statements: false
+#      # 每个连接最多缓存多少个SQL	建议值:20
+#      max-pool-prepared-statement-per-connection-size: 20
+#      # 检查空闲连接的频率，单位毫秒, 非正整数时表示不进行检查
+#      time-between-eviction-runs-millis: 60000
+#      # 池中某个连接的空闲时长达到 N 毫秒后, 连接池在下次检查空闲连接时，将回收该连接,要小于防火墙超时设置
+#      min-evictable-idle-time-millis: 300000
+#      # 检查池中的连接是否仍可用的 SQL 语句
+#      validation-query: SELECT 1
+#      # 当程序请求连接，池在分配连接时，是否先检查该连接是否有效。(高效)	建议值:true
+#      test-while-idle: true
+#      # 程序 申请 连接时,进行连接有效性检查（低效，影响性能）	建议值:false
+#      test-on-borrow: false
+#      # 程序 返还 连接时,进行连接有效性检查（低效，影响性能）	建议值:false
+#      test-on-return: false
+#      #通过别名的方式配置扩展插件，常用的插件有：监控统计用的filter:stat，日志用的filter:log4j，防御sql注入的filter:wall
+#      filters: stat,wall
+#      filter:
+#        stat:
+#          log-slow-sql: true
+#          slow-sql-millis: 1000
+#          merge-sql: false
+#        wall:
+#          config:
+#            multi-statement-allow: true
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 0
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 1
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    # Sequence序列接口实现类配置
+#    key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
+  # mybatis原生配置
+  configuration:
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    #二级缓存
+    cache-enabled: false
+
+# spring boot admin 配置
+management:
+  health:
+    mail:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
