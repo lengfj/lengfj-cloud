@@ -1,4 +1,4 @@
-package com.lengfj.cloud.system;
+package com.lengfj.cloud.osme;
 
 import com.lengfj.cloud.common.springdoc.annotation.EnableSpringDoc;
 import lombok.extern.slf4j.Slf4j;

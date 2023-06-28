@@ -1,10 +1,12 @@
-package com.lengfj.cloud.common.core.exception.util;
+package com.lengfj.cloud.common.core.i18n;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.MessageSource;
 import org.springframework.lang.Nullable;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 import java.util.Locale;
 
@@ -41,7 +43,7 @@ public class MessageSourceUtil implements ApplicationContextAware {
      * @return
      */
     public static String getMessage(String code, @Nullable Object[] args, @Nullable String defaultMessage){
-        return getInstance().getMessage(code, args, defaultMessage, Locale.CHINA);
+        return getInstance().getMessage(code, args, defaultMessage);
     }
 
     /**
@@ -51,7 +53,7 @@ public class MessageSourceUtil implements ApplicationContextAware {
      * @return
      */
     public static String getMessage(String code, @Nullable Object[] args){
-        return getInstance().getMessage(code, args, code, Locale.CHINA);
+        return getInstance().getMessage(code, args, code, Locale.getDefault());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.lengfj.cloud.system.api;
+package com.lengfj.cloud.osme.api;
 
 import com.lengfj.cloud.common.core.api.R;
 import org.springframework.web.bind.annotation.GetMapping;

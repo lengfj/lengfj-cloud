@@ -11,6 +11,7 @@
 <!--        <module>lengfj-bom</module>-->
         <module>lengfj-common</module>
         <module>lengfj-ops</module>
+        <module>lengfj-osme</module>
         <module>lengfj-system</module>
     </modules>
     <packaging>pom</packaging>
