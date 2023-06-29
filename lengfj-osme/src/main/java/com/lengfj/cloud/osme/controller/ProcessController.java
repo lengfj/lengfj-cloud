@@ -1,6 +1,7 @@
 package com.lengfj.cloud.osme.controller;
 
 
+import com.lengfj.cloud.osme.entity.Process;
 import com.lengfj.cloud.osme.service.ProcessEventStateScenarioService;
 import com.lengfj.cloud.osme.service.ProcessService;
 import com.lengfj.cloud.osme.entity.ProcessEventStateScenario;
@@ -40,7 +41,7 @@ public class ProcessController {
     @GetMapping("{id}")
     public Process selectOne(@PathVariable Serializable id) {
 
-        Process process = processService.selectById(id);
+        Process process = processService.getById(id);
         return process;
     }
 
@@ -54,7 +55,7 @@ public class ProcessController {
     @GetMapping("/ProcessEventStateScenario/{id}")
     public ProcessEventStateScenario selectOne1(@PathVariable Serializable id) {
 
-        ProcessEventStateScenario processEventStateScenario = processEventStateScenarioService.selectById(id);
+        ProcessEventStateScenario processEventStateScenario = processEventStateScenarioService.getById(id);
         return processEventStateScenario;
     }
 
