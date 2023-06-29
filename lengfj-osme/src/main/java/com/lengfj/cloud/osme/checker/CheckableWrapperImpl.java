@@ -1,8 +1,8 @@
 package com.lengfj.cloud.osme.checker;
 
 import com.google.common.collect.Lists;
-import com.lengfj.cloud.osme.engine.StateContext;
 import com.lengfj.cloud.osme.module.ServiceResult;
+import com.lengfj.cloud.osme.engine.StateContext;
 
 import java.util.List;
 import java.util.function.Function;

@@ -1,0 +1,23 @@
+server:
+  port: 8889
+  servlet:
+    context-path: /lengfj-dynamic-pagination-api
+
+spring:
+  application:
+    name: lengfj-dynamic-pagination-api
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
+#        namespace: ${NACOS_NAMESPACE}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - ${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+#          - ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#        namespace: ${NACOS_NAMESPACE}
+        group: ${spring.application.name}
+#  profiles:
+#    active: @profiles.active@

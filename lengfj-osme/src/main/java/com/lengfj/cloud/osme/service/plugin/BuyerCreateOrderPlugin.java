@@ -4,8 +4,8 @@ import com.lengfj.cloud.common.core.api.R;
 import com.lengfj.cloud.osme.engine.StateContext;
 import com.lengfj.cloud.osme.module.CreateOrderDTO;
 import com.lengfj.cloud.osme.module.ServiceResult;
-import com.lengfj.cloud.osme.plugin.PluginHandler;
 import com.lengfj.cloud.osme.plugin.ProcessorPlugin;
+import com.lengfj.cloud.osme.plugin.PluginHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @ProcessorPlugin(state = "0",event = "1",bizCode = "1",sceneId = "1")
-public class BuyerCreateOrderPlugin implements PluginHandler<R,CreateOrderDTO> {
+public class BuyerCreateOrderPlugin implements PluginHandler<R, CreateOrderDTO> {
 
     @Override
     public ServiceResult<R> action(StateContext<CreateOrderDTO> context) throws Exception {

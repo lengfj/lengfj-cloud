@@ -2,7 +2,6 @@ package com.lengfj.cloud.osme.service.processor;
 
 import com.google.common.collect.Lists;
 import com.lengfj.cloud.common.core.api.R;
-import com.lengfj.cloud.osme.checker.Checkable;
 import com.lengfj.cloud.osme.checker.Checker;
 import com.lengfj.cloud.osme.engine.StateContext;
 import com.lengfj.cloud.osme.module.CreateOrderDTO;
@@ -11,6 +10,7 @@ import com.lengfj.cloud.osme.processor.AbstractStateProcessor;
 import com.lengfj.cloud.osme.service.ProcessEventStateScenarioService;
 import com.lengfj.cloud.osme.service.checker.StoreLimitOrderChecker;
 import com.lengfj.cloud.osme.service.checker.UserSignChecker;
+import com.lengfj.cloud.osme.checker.Checkable;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

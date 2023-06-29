@@ -3,6 +3,7 @@ package com.lengfj.cloud.common.mybatis.base;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
  * 抽象实体
  * @author lester
  */
+@Data
 public class BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 

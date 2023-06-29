@@ -1,8 +1,8 @@
 package com.lengfj.cloud.osme.service.processor;
 
 import com.lengfj.cloud.common.core.api.R;
-import com.lengfj.cloud.osme.checker.Checkable;
 import com.lengfj.cloud.osme.checker.Checker;
+import com.lengfj.cloud.osme.checker.Checkable;
 import com.lengfj.cloud.osme.engine.StateContext;
 import com.lengfj.cloud.osme.module.ServiceResult;
 import com.lengfj.cloud.osme.processor.AbstractStateProcessor;

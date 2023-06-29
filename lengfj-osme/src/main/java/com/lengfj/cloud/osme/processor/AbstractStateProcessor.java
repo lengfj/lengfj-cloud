@@ -2,13 +2,13 @@ package com.lengfj.cloud.osme.processor;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.lengfj.cloud.osme.module.ServiceResult;
+import com.lengfj.cloud.osme.plugin.PluginExecutor;
+import com.lengfj.cloud.osme.service.ProcessEventStateScenarioService;
 import com.lengfj.cloud.osme.checker.Checkable;
 import com.lengfj.cloud.osme.checker.CheckerExecutor;
 import com.lengfj.cloud.osme.engine.StateContext;
 import com.lengfj.cloud.osme.entity.ProcessEventStateScenario;
-import com.lengfj.cloud.osme.module.ServiceResult;
-import com.lengfj.cloud.osme.plugin.PluginExecutor;
-import com.lengfj.cloud.osme.service.ProcessEventStateScenarioService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -40,7 +40,7 @@ public abstract class AbstractStateProcessor <T,C> implements StateProcessor<T, 
      * 事件执行入口
      *
      * @param context 事件状态上下文
-     * @return {@link com.lengfj.cloud.osme.module.ServiceResult<T>}
+     * @return {@link ServiceResult <T>}
      * @author lengfj
      * @date 2021/12/29 11:06 AM
      */

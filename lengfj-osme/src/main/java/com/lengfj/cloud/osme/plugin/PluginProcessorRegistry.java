@@ -18,7 +18,7 @@ public interface PluginProcessorRegistry {
      * @param eventType
      * @param bizCode
      * @param sceneId
-     * @return {@link List<com.lengfj.cloud.osme.plugin.PluginHandler>}
+     * @return {@link List< PluginHandler >}
      * @author lengfj
      * @date 2021/12/27 9:44 AM
      */

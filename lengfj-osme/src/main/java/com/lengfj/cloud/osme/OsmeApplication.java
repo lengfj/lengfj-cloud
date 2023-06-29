@@ -1,10 +1,7 @@
 package com.lengfj.cloud.osme;
 
-import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import com.lengfj.cloud.common.core.util.SpringContextUtil;
-import com.lengfj.cloud.common.feign.annotation.EnableLbbFeignClients;
-import com.lengfj.cloud.common.job.annotation.EnableLbbXxlJob;
-import com.lengfj.cloud.common.swagger.annotation.EnableLbbSwagger2;
+import com.lengfj.cloud.common.springdoc.annotation.EnableSpringDoc;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -21,11 +18,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
  **/
 @Slf4j
 @EnableAsync
-@EnableDistributedTransaction
+@EnableSpringDoc
 @EnableDiscoveryClient
-@EnableLbbFeignClients
-@EnableLbbXxlJob
-@EnableLbbSwagger2
 @SpringBootApplication
 @MapperScan(basePackages = {"com.lengfj.cloud.osme.dao"})
 public class OsmeApplication {

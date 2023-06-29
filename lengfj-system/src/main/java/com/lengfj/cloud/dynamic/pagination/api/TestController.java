@@ -1,4 +1,4 @@
-package com.lengfj.cloud.osme.api;
+package com.lengfj.cloud.dynamic.pagination.api;
 
 import com.lengfj.cloud.common.core.api.R;
 import org.springframework.web.bind.annotation.GetMapping;
