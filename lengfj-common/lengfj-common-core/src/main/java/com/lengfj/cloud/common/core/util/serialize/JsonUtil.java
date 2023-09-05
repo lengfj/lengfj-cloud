@@ -22,7 +22,7 @@ public class JsonUtil {
 
     public static <T> T convertValue(Object fromValue, Class<T> toValueType) {
         try {
-            return fromValue != null ? BaseJacksonUtil.getObjectMapper().convertValue(fromValue, toValueType) : null;
+            return fromValue != null ? BaseJacksonUtil.MAPPER.convertValue(fromValue, toValueType) : null;
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("The given object value: "
                     + fromValue + " cannot be converted to " + toValueType, e);
@@ -31,7 +31,7 @@ public class JsonUtil {
 
     public static <T> T convertValue(Object fromValue, TypeReference<T> toValueTypeRef) {
         try {
-            return fromValue != null ? BaseJacksonUtil.getObjectMapper().convertValue(fromValue, toValueTypeRef) : null;
+            return fromValue != null ? BaseJacksonUtil.MAPPER.convertValue(fromValue, toValueTypeRef) : null;
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("The given object value: "
                     + fromValue + " cannot be converted to " + toValueTypeRef, e);
@@ -40,7 +40,7 @@ public class JsonUtil {
 
     public static <T> T fromString(String string, Class<T> clazz) {
         try {
-            return string != null ? BaseJacksonUtil.getObjectMapper().readValue(string, clazz) : null;
+            return string != null ? BaseJacksonUtil.MAPPER.readValue(string, clazz) : null;
         } catch (IOException e) {
             throw new IllegalArgumentException("The given string value: "
                     + string + " cannot be transformed to Json object", e);
@@ -49,7 +49,7 @@ public class JsonUtil {
 
     public static <T> T fromString(String string, TypeReference<T> valueTypeRef) {
         try {
-            return string != null ? BaseJacksonUtil.getObjectMapper().readValue(string, valueTypeRef) : null;
+            return string != null ? BaseJacksonUtil.MAPPER.readValue(string, valueTypeRef) : null;
         } catch (IOException e) {
             throw new IllegalArgumentException("The given string value: "
                     + string + " cannot be transformed to Json object", e);
@@ -58,7 +58,7 @@ public class JsonUtil {
 
     public static <T> T fromBytes(byte[] bytes, Class<T> clazz) {
         try {
-            return bytes != null ? BaseJacksonUtil.getObjectMapper().readValue(bytes, clazz) : null;
+            return bytes != null ? BaseJacksonUtil.MAPPER.readValue(bytes, clazz) : null;
         } catch (IOException e) {
             throw new IllegalArgumentException("The given string value: "
                     + Arrays.toString(bytes) + " cannot be transformed to Json object", e);
@@ -67,7 +67,7 @@ public class JsonUtil {
 
     public static JsonNode fromBytes(byte[] bytes) {
         try {
-            return BaseJacksonUtil.getObjectMapper().readTree(bytes);
+            return BaseJacksonUtil.MAPPER.readTree(bytes);
         } catch (IOException e) {
             throw new IllegalArgumentException("The given byte[] value: "
                     + Arrays.toString(bytes) + " cannot be transformed to Json object", e);
@@ -76,7 +76,7 @@ public class JsonUtil {
 
     public static String toString(Object value) {
         try {
-            return value != null ? BaseJacksonUtil.getObjectMapper().writeValueAsString(value) : null;
+            return value != null ? BaseJacksonUtil.MAPPER.writeValueAsString(value) : null;
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("The given Json object value: "
                     + value + " cannot be transformed to a String", e);
@@ -85,14 +85,14 @@ public class JsonUtil {
 
     public static <T> T treeToValue(JsonNode node, Class<T> clazz) {
         try {
-            return BaseJacksonUtil.getObjectMapper().treeToValue(node, clazz);
+            return BaseJacksonUtil.MAPPER.treeToValue(node, clazz);
         } catch (IOException e) {
             throw new IllegalArgumentException("Can't convert value: " + node.toString(), e);
         }
     }
 
     public static JsonNode toJsonNode(String value) {
-        return toJsonNode(value, BaseJacksonUtil.getObjectMapper());
+        return toJsonNode(value, BaseJacksonUtil.MAPPER);
     }
 
     public static JsonNode toJsonNode(String value, ObjectMapper mapper) {
@@ -107,7 +107,7 @@ public class JsonUtil {
     }
 
     public static ObjectNode newObjectNode() {
-        return newObjectNode(BaseJacksonUtil.getObjectMapper());
+        return newObjectNode(BaseJacksonUtil.MAPPER);
     }
 
     public static ObjectNode newObjectNode(ObjectMapper mapper) {
@@ -115,7 +115,7 @@ public class JsonUtil {
     }
 
     public static ArrayNode newArrayNode() {
-        return newArrayNode(BaseJacksonUtil.getObjectMapper());
+        return newArrayNode(BaseJacksonUtil.MAPPER);
     }
 
     public static ArrayNode newArrayNode(ObjectMapper mapper) {
@@ -129,12 +129,12 @@ public class JsonUtil {
     }
 
     public static <T> JsonNode valueToTree(T value) {
-        return BaseJacksonUtil.getObjectMapper().valueToTree(value);
+        return BaseJacksonUtil.MAPPER.valueToTree(value);
     }
 
     public static <T> byte[] writeValueAsBytes(T value) {
         try {
-            return BaseJacksonUtil.getObjectMapper().writeValueAsBytes(value);
+            return BaseJacksonUtil.MAPPER.writeValueAsBytes(value);
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("The given Json object value: "
                     + value + " cannot be transformed to a String", e);
