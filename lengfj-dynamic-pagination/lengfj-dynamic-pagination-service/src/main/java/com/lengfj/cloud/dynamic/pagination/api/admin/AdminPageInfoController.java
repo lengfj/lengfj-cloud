@@ -1,4 +1,4 @@
-package com.lengfj.cloud.dynamic.pagination.web.admin;
+package com.lengfj.cloud.dynamic.pagination.api.admin;
 
 import com.lengfj.cloud.common.core.api.R;
 import com.lengfj.cloud.common.mybatis.page.PageView;

@@ -1,6 +1,5 @@
-package com.lengfj.cloud.dynamic.pagination.web.admin;
+package com.lengfj.cloud.dynamic.pagination.api.rpc;
 
-import com.lengfj.cloud.common.core.api.R;
 import com.lengfj.cloud.dynamic.pagination.model.dto.PageUserConfigDTO;
 import com.lengfj.cloud.dynamic.pagination.model.vo.PageListConfigVO;
 import com.lengfj.cloud.dynamic.pagination.service.PageUserConfigService;
@@ -14,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("/admin/pageUserConfig")
+@RequestMapping("/rpc/pageUserConfig")
 @RestController
-public class AdminPageUserConfigController {
+public class PageUserConfigFeignClient {
 
     @Autowired
     private PageUserConfigService pageUserConfigService;
@@ -30,8 +29,8 @@ public class AdminPageUserConfigController {
      * @date 2022/1/11 7:48 PM
      */
     @GetMapping("/configList")
-    public R<List<PageListConfigVO>> configList(@RequestParam("userId") Long userId, @RequestParam("pageId") Integer pageId){
-        return R.data(pageUserConfigService.configList(userId, pageId));
+    public List<PageListConfigVO> configList(@RequestParam("userId") Long userId, @RequestParam("pageId") Integer pageId){
+        return pageUserConfigService.configList(userId, pageId);
     }
 
     /**
@@ -42,8 +41,8 @@ public class AdminPageUserConfigController {
      * @date 2022/1/11 7:48 PM
      */
     @GetMapping("/defaultConfigList")
-    public R<List<PageListConfigVO>> defaultConfigList(@RequestParam("pageId") Integer pageId){
-        return R.data(pageUserConfigService.defaultConfigList(pageId));
+    public List<PageListConfigVO> defaultConfigList(@RequestParam("pageId") Integer pageId){
+        return pageUserConfigService.defaultConfigList(pageId);
     }
 
     /***
@@ -54,9 +53,7 @@ public class AdminPageUserConfigController {
      * @date 2022/1/11 7:50 PM
      */
     @PostMapping("/saveOrModify")
-    public R<Object> saveOrModify(@RequestBody PageUserConfigDTO configDto){
+    public void saveOrModify(@RequestBody PageUserConfigDTO configDto){
         pageUserConfigService.saveOrModify(configDto);
-        return R.success("保存成功");
     }
-
 }

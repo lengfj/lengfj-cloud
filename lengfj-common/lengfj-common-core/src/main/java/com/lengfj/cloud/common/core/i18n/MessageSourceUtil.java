@@ -43,7 +43,7 @@ public class MessageSourceUtil implements ApplicationContextAware {
      * @return
      */
     public static String getMessage(String code, @Nullable Object[] args, @Nullable String defaultMessage){
-        return getInstance().getMessage(code, args, defaultMessage);
+        return getInstance().getMessage(code, args, defaultMessage, Locale.getDefault());
     }
 
     /**
@@ -53,7 +53,7 @@ public class MessageSourceUtil implements ApplicationContextAware {
      * @return
      */
     public static String getMessage(String code, @Nullable Object[] args){
-        return getInstance().getMessage(code, args, code, Locale.getDefault());
+        return getInstance().getMessage(code, args, Locale.getDefault());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.lengfj.cloud.dynamic.pagination;
 
+import cn.dev33.satoken.SaManager;
 import com.lengfj.cloud.common.springdoc.annotation.EnableSpringDoc;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -18,5 +19,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class SystemApplication {
     public static void main(String[] args) {
         SpringApplication.run(SystemApplication.class, args);
+        System.out.println("启动成功，Sa-Token 配置如下：" + SaManager.getConfig());
     }
 }

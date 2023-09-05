@@ -1,4 +1,4 @@
-package com.lengfj.cloud.dynamic.pagination.web.admin;
+package com.lengfj.cloud.dynamic.pagination.api.admin;
 
 import com.lengfj.cloud.dynamic.pagination.model.dto.PageListConfigAddFieldDTO;
 import com.lengfj.cloud.dynamic.pagination.model.dto.PageListConfigSaveDTO;

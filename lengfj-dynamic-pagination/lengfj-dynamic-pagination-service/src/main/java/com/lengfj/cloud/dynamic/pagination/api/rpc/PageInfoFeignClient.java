@@ -1,4 +1,4 @@
-package com.lengfj.cloud.dynamic.pagination.web.rpc;
+package com.lengfj.cloud.dynamic.pagination.api.rpc;
 
 import com.lengfj.cloud.dynamic.pagination.model.vo.PageInfoVO;
 import com.lengfj.cloud.dynamic.pagination.service.PageInfoService;
