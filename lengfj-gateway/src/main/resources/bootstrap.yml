@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+#      discovery:
+#        namespace: public
+      # Nacos Config 配置项，对应 NacosConfigProperties 配置属性类
+      config:
+        server-addr: 127.0.0.1:8848
+#        namespace: public
+#        group: DEFAULT_GROUP
+#        name:
+#        file-extension: yml
+

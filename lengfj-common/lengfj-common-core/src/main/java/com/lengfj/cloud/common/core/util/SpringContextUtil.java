@@ -2,6 +2,7 @@ package com.lengfj.cloud.common.core.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -17,7 +18,7 @@ import java.util.Map;
  * @date 2021/11/2
  **/
 @Slf4j
-public class SpringContextUtil implements BeanFactoryPostProcessor,ApplicationContextAware {
+public class SpringContextUtil implements BeanFactoryPostProcessor,ApplicationContextAware, InitializingBean {
 
     private static ConfigurableListableBeanFactory beanFactory;
     private static ApplicationContext applicationContext;
@@ -48,6 +49,19 @@ public class SpringContextUtil implements BeanFactoryPostProcessor,ApplicationCo
 
     public static ApplicationContext getApplicationContext() {
         return applicationContext;
+    }
+
+    /**
+     * 打印项目中加载的bean
+     * @throws Exception
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        String[] names = applicationContext.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(">>>>>>" + name);
+        }
+        System.out.println("------Bean 总计:" + applicationContext.getBeanDefinitionCount());
     }
 
     public static ListableBeanFactory getBeanFactory() {
@@ -94,6 +108,5 @@ public class SpringContextUtil implements BeanFactoryPostProcessor,ApplicationCo
         }
         return activeProfiles[0];
     }
-
 
 }

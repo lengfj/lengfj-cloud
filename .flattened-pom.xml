@@ -11,7 +11,9 @@
   <modules>
     <module>lengfj-common</module>
     <module>lengfj-ops</module>
+    <module>lengfj-osme</module>
     <module>lengfj-system</module>
+    <module>lengfj-gateway</module>
   </modules>
   <properties>
     <lombok.version>1.18.26</lombok.version>
@@ -34,6 +36,13 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <repositories>
+    <repository>
+      <id>aliyunmaven</id>
+      <name>aliyun</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+    </repository>
+  </repositories>
   <build>
     <pluginManagement>
       <plugins>

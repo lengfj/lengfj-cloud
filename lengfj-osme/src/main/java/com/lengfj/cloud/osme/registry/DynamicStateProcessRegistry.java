@@ -1,7 +1,6 @@
 package com.lengfj.cloud.osme.registry;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lengfj.cloud.osme.dao.EventDao;
 import com.lengfj.cloud.osme.dao.ProcessDao;
 import com.lengfj.cloud.osme.dao.ProcessEventStateScenarioDao;
@@ -47,8 +46,7 @@ public class DynamicStateProcessRegistry implements ApplicationContextAware, Sta
          processDao = applicationContext.getBean(ProcessDao.class);
          processEventStateScenarioDao = applicationContext.getBean(ProcessEventStateScenarioDao.class);
 
-        Wrapper<ProcessEventStateScenario> stateWrapper = new EntityWrapper<>();
-        List<ProcessEventStateScenario> processEventStateScenarios = processEventStateScenarioDao.selectList(stateWrapper);
+        List<ProcessEventStateScenario> processEventStateScenarios = processEventStateScenarioDao.selectList(new QueryWrapper<>());
 
         if(!CollectionUtils.isEmpty(processEventStateScenarios)){
             processEventStateScenarios.forEach(p->{

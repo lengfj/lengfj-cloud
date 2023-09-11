@@ -1,23 +1,16 @@
 server:
   port: 8888
   servlet:
-    context-path: /lengfj-system-api
+    context-path: /system-api
 
 spring:
   application:
-    name: lengfj-system-api
+    name: system-api
   cloud:
     nacos:
       discovery:
-        server-addr: ${NACOS_HOST:127.0.0.1}:${NACOS_PORT:8848}
-#        namespace: ${NACOS_NAMESPACE}
+        server-addr: 127.0.0.1:8848
       config:
-        server-addr: ${spring.cloud.nacos.discovery.server-addr}
-        file-extension: yml
-        shared-configs:
-          - ${spring.application.name}.${spring.cloud.nacos.config.file-extension}
-#          - ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-#        namespace: ${NACOS_NAMESPACE}
-        group: ${spring.application.name}
+        server-addr: 127.0.0.1:8848
 #  profiles:
 #    active: @profiles.active@

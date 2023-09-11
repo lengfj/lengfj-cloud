@@ -124,7 +124,7 @@ public class PageInfoServiceImpl extends ServiceImpl<PageInfoDao, PageInfoEntity
         pageInfoEntity.setPageUrl(saveDTO.getPageUrl());
         pageInfoEntity.setCreator("");
         pageInfoEntity.setCreateTime(LocalDateTime.now());
-        this.insert(pageInfoEntity);
+        this.save(pageInfoEntity);
         //4. 新增页面字段列表
         if (CollectionUtils.isNotEmpty(saveDTO.getPageFieldInfoSaves())){
             for (PageFieldInfoSaveDTO pageFieldInfoSave : saveDTO.getPageFieldInfoSaves()) {

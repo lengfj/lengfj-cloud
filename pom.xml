@@ -13,6 +13,7 @@
         <module>lengfj-ops</module>
         <module>lengfj-osme</module>
         <module>lengfj-system</module>
+        <module>lengfj-gateway</module>
     </modules>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>

@@ -1,0 +1,2 @@
+com.lengfj.cloud.common.feign.interceptor.FeignInterceptor
+com.lengfj.cloud.common.feign.interceptor.ExceptionErrorDecoder
