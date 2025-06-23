@@ -1,123 +1,121 @@
 # lengfj-cloud
 
-A modern microservices scaffold based on Spring Boot 3.0, Spring Cloud, and Spring Cloud Alibaba.
+基于Spring Boot 3.0、Spring Cloud、Spring Cloud Alibaba的现代化微服务脚手架
 
-基于Spring Boot 3.0、Spring Cloud、Spring Cloud Alibaba的现代化微服务脚手架。
+## 🚀 项目特性
 
-## 🚀 Features
+- **现代化技术栈**: 基于Spring Boot 3.0、Spring Cloud、Spring Cloud Alibaba构建
+- **Java 17**: 采用最新的Java LTS版本，性能优异
+- **微服务架构**: 模块化设计，职责分离清晰
+- **API网关**: 基于Spring Cloud Gateway的统一路由和负载均衡
+- **监控运维**: 集成监控、任务调度和管理工具
+- **开发友好**: 完善的工具链和文档支持
 
-- **Modern Tech Stack**: Built with Spring Boot 3.0, Spring Cloud, and Spring Cloud Alibaba
-- **Java 17**: Leverages the latest Java LTS version for optimal performance
-- **Microservices Architecture**: Modular design with clear separation of concerns
-- **API Gateway**: Centralized routing and load balancing with Spring Cloud Gateway
-- **Monitoring & Operations**: Integrated monitoring, job scheduling, and admin tools
-- **Developer Friendly**: Comprehensive tooling and documentation support
+## 🏗️ 系统架构
 
-## 🏗️ Architecture
+本项目采用微服务架构，包含以下核心模块：
 
-This project follows a microservices architecture with the following core modules:
+### 核心模块
 
-### Core Modules
+- **[lengfj-gateway](./lengfj-gateway/)** - API网关服务，负责路由和负载均衡
+- **[lengfj-system](./lengfj-system/)** - 系统管理模块
+- **[lengfj-osme](./lengfj-osme/)** - 业务逻辑模块
+- **[lengfj-common](./lengfj-common/)** - 公共工具和组件
+- **[lengfj-ops](./lengfj-ops/)** - 运维监控工具
+- **[lengfj-dynamic-pagination](./lengfj-dynamic-pagination/)** - 动态分页服务
 
-- **[lengfj-gateway](./lengfj-gateway/)** - API Gateway service for routing and load balancing
-- **[lengfj-system](./lengfj-system/)** - System management and administration module
-- **[lengfj-osme](./lengfj-osme/)** - Business logic module
-- **[lengfj-common](./lengfj-common/)** - Shared utilities and common components
-- **[lengfj-ops](./lengfj-ops/)** - Operations and monitoring tools
-- **[lengfj-dynamic-pagination](./lengfj-dynamic-pagination/)** - Dynamic pagination service
+### 运维监控
 
-### Operations & Monitoring
+[`lengfj-ops`](./lengfj-ops/) 模块包含：
+- **lengfj-monitor-admin** - 应用监控面板
+- **lengfj-xxl-job-admin** - 分布式任务调度
+- **lengfj-sentinel-admin** - 熔断限流控制
+- **lengfj-leaf** - 分布式ID生成服务
 
-The [`lengfj-ops`](./lengfj-ops/) module includes:
-- **lengfj-monitor-admin** - Application monitoring dashboard
-- **lengfj-xxl-job-admin** - Distributed job scheduling
-- **lengfj-sentinel-admin** - Circuit breaker and flow control
-- **lengfj-leaf** - Distributed ID generation service
+## 🛠️ 技术栈
 
-## 🛠️ Technology Stack
+| 组件 | 技术 |
+|------|------|
+| **框架** | Spring Boot 3.0 |
+| **微服务** | Spring Cloud |
+| **服务发现** | Spring Cloud Alibaba |
+| **API网关** | Spring Cloud Gateway |
+| **接口文档** | Knife4j (Swagger) |
+| **构建工具** | Maven |
+| **Java版本** | Java 17 |
 
-| Component | Technology |
-|-----------|------------|
-| **Framework** | Spring Boot 3.0 |
-| **Microservices** | Spring Cloud |
-| **Service Discovery** | Spring Cloud Alibaba |
-| **API Gateway** | Spring Cloud Gateway |
-| **Documentation** | Knife4j (Swagger) |
-| **Build Tool** | Maven |
-| **Java Version** | Java 17 |
+## 🚦 快速开始
 
-## 🚦 Getting Started
+### 环境要求
 
-### Prerequisites
-
-- Java 17 or higher
+- Java 17 或更高版本
 - Maven 3.6+
-- Your favorite IDE (IntelliJ IDEA recommended)
+- 推荐使用 IntelliJ IDEA
 
-### Quick Start
+### 快速启动
 
-1. **Clone the repository**
+1. **克隆项目**
    ```bash
    git clone https://github.com/lengfj/lengfj-cloud.git
    cd lengfj-cloud
    ```
 
-2. **Build the project**
+2. **构建项目**
    ```bash
    mvn clean install
    ```
 
-3. **Start the services**
+3. **启动服务**
    
-   Start the gateway service:
+   启动网关服务：
    ```bash
    cd lengfj-gateway
    mvn spring-boot:run
    ```
    
-   Start the system service:
+   启动系统服务：
    ```bash
    cd lengfj-system
    mvn spring-boot:run
    ```
 
-4. **Access the application**
-   - Gateway: `http://localhost:8080`
-   - API Documentation: `http://localhost:8080/doc.html`
+4. **访问应用**
+   - 网关地址: `http://localhost:8080`
+   - 接口文档: `http://localhost:8080/doc.html`
 
-## 📁 Project Structure
+## 📁 项目结构
 
 ```
 lengfj-cloud/
-├── lengfj-bom/                    # Bill of Materials for dependency management
-├── lengfj-common/                 # Common utilities and shared components
-│   ├── lengfj-common-core/        # Core utilities
-│   ├── lengfj-common-feign/       # Feign client configurations
-│   ├── lengfj-common-mybatis/     # MyBatis configurations
-│   ├── lengfj-common-redis-lock/  # Redis distributed lock
+├── lengfj-bom/                    # 依赖管理BOM
+├── lengfj-common/                 # 公共工具和组件
+│   ├── lengfj-common-core/        # 核心工具
+│   ├── lengfj-common-feign/       # Feign客户端配置
+│   ├── lengfj-common-mybatis/     # MyBatis配置
+│   ├── lengfj-common-redis-lock/  # Redis分布式锁
 │   └── ...
-├── lengfj-gateway/                # API Gateway service
-├── lengfj-system/                 # System management module
-├── lengfj-osme/                   # Business module
-├── lengfj-ops/                    # Operations and monitoring
-│   ├── lengfj-monitor-admin/      # Monitoring dashboard
-│   ├── lengfj-xxl-job-admin/      # Job scheduling
-│   ├── lengfj-sentinel-admin/     # Circuit breaker
-│   └── lengfj-leaf/               # ID generation service
-└── lengfj-dynamic-pagination/     # Dynamic pagination service
+├── lengfj-gateway/                # API网关服务
+├── lengfj-system/                 # 系统管理模块
+├── lengfj-osme/                   # 业务模块
+├── lengfj-ops/                    # 运维监控
+│   ├── lengfj-monitor-admin/      # 监控面板
+│   ├── lengfj-xxl-job-admin/      # 任务调度
+│   ├── lengfj-sentinel-admin/     # 熔断器
+│   └── lengfj-leaf/               # ID生成服务
+└── lengfj-dynamic-pagination/     # 动态分页服务
 ```
 
-## 🤝 Contributing
+## 🤝 参与贡献
 
-We welcome contributions! Please feel free to submit a Pull Request.
+欢迎提交 Pull Request 来改进项目！
 
-## 📄 License
+## 📄 开源协议
 
-This project is open source and available under the [MIT License](LICENSE).
+本项目基于 [MIT License](LICENSE) 开源协议。
 
-## 📞 Support
+## 📞 技术支持
 
-If you have any questions or need help, please:
-- Open an issue on GitHub
-- Check the documentation in each module's directory
-- Review the configuration files for setup examples
+如果您有任何问题或需要帮助，请：
+- 在GitHub上提交issue
+- 查看各模块目录下的文档
+- 参考配置文件中的示例
